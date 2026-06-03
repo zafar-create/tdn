@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TDN — Customer Support</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --brand: #6c3aed;
+      --brand-dark: #4c1d95;
+      --ink: #1f2937;
+      --muted: #6b7280;
+      --bg: #f8fafc;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      color: var(--ink);
+      background: var(--bg);
+      line-height: 1.6;
+    }
+
+    /* Header */
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 18px 32px;
+      background: #fff;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    .logo {
+      font-size: 22px;
+      font-weight: 800;
+      color: var(--brand);
+      letter-spacing: -0.5px;
+    }
+
+    nav a {
+      color: var(--muted);
+      text-decoration: none;
+      margin-left: 28px;
+      font-size: 15px;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+
+    nav a:hover { color: var(--brand); }
+
+    /* Hero */
+    .hero {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 96px 24px 64px;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: clamp(32px, 5vw, 52px);
+      font-weight: 800;
+      letter-spacing: -1px;
+      background: linear-gradient(135deg, var(--brand), var(--brand-dark));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .hero p {
+      margin: 20px auto 36px;
+      font-size: 18px;
+      color: var(--muted);
+      max-width: 560px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 14px 32px;
+      background: var(--brand);
+      color: #fff;
+      text-decoration: none;
+      border-radius: 10px;
+      font-weight: 600;
+      font-size: 16px;
+      transition: transform 0.15s, box-shadow 0.2s;
+      box-shadow: 0 8px 20px rgba(108, 58, 237, 0.25);
+    }
+
+    .btn:hover { transform: translateY(-2px); box-shadow: 0 12px 26px rgba(108, 58, 237, 0.35); }
+
+    /* Features */
+    .features {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 32px 24px 96px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 24px;
+    }
+
+    .card {
+      background: #fff;
+      border: 1px solid #eef0f4;
+      border-radius: 16px;
+      padding: 28px;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .card:hover { transform: translateY(-4px); box-shadow: 0 16px 32px rgba(0, 0, 0, 0.06); }
+
+    .card .icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, var(--brand), var(--brand-dark));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 22px;
+      margin-bottom: 16px;
+    }
+
+    .card h3 { font-size: 18px; margin-bottom: 8px; }
+    .card p { color: var(--muted); font-size: 15px; }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 32px 24px;
+      color: var(--muted);
+      font-size: 14px;
+      border-top: 1px solid #eef0f4;
+      background: #fff;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">TDN</div>
+    <nav>
+      <a href="#features">Fitur</a>
+      <a href="#">Harga</a>
+      <a href="#">Tentang</a>
+      <a href="#">Kontak</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h1>Butuh Bantuan? Kami Siap Membantu</h1>
+    <p>
+      Tim support kami tersedia untuk menjawab pertanyaan Anda kapan saja.
+      Mulai percakapan lewat live chat di pojok kanan bawah layar Anda.
+    </p>
+    <a href="#" class="btn" onclick="if(window.Qismo){document.querySelector('.qismo-widget,[id^=qismo]')?.click()} return false;">
+      Hubungi Kami
+    </a>
+  </section>
+
+  <section class="features" id="features">
+    <div class="card">
+      <div class="icon">💬</div>
+      <h3>Live Chat 24/7</h3>
+      <p>Terhubung langsung dengan agen kami melalui widget chat real-time.</p>
+    </div>
+    <div class="card">
+      <div class="icon">⚡</div>
+      <h3>Respon Cepat</h3>
+      <p>Pertanyaan Anda dijawab dengan cepat oleh tim yang berpengalaman.</p>
+    </div>
+    <div class="card">
+      <div class="icon">🔒</div>
+      <h3>Aman & Terpercaya</h3>
+      <p>Percakapan Anda terlindungi dengan standar keamanan terbaik.</p>
+    </div>
+  </section>
+
+  <footer>
+    © 2026 TDN. All rights reserved. Powered by Qiscus Omnichannel.
+  </footer>
+
+  <!-- Qiscus Qismo Widget -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      var s, t; s = document.createElement('script'); s.type = 'text/javascript';
+      s.src = 'https://latest-omnichannel.qiscus.com/js/qismo-v5.js'; s.async = true;
+      s.onload = s.onreadystatechange = function () {
+        new Qismo('mbjqi-js2oet8jnzeauox', {
+          options: {
+            channel_id: 135122,
+            mobileBreakPoint: 400,
+            extra_fields: [],
+            baseUrl: 'https://latest-omnichannel.qiscus.com',
+            qismoIframeUrl: 'https://latest-omnichannel.qiscus.com',
+          },
+        });
+      }
+      t = document.getElementsByTagName('script')[0]; t.parentNode.insertBefore(s, t);
+    })
+  </script>
+</body>
+</html>
